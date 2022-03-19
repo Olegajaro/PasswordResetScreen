@@ -30,7 +30,7 @@ class PasswordTextField: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height: 50)
+        return CGSize(width: 200, height: 60)
     }
 }
 
@@ -39,7 +39,7 @@ extension PasswordTextField {
     
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemOrange
+//        backgroundColor = .systemOrange
         
         lockImageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -69,8 +69,8 @@ extension PasswordTextField {
         errorMessageLabel.textColor = .systemRed
         errorMessageLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
         errorMessageLabel.text = "Enter your password."
-        errorMessageLabel.adjustsFontSizeToFitWidth = true
-        errorMessageLabel.minimumScaleFactor = 0.8
+        errorMessageLabel.numberOfLines = 0
+        errorMessageLabel.lineBreakMode = .byWordWrapping
         errorMessageLabel.isHidden = false // true
     }
     
