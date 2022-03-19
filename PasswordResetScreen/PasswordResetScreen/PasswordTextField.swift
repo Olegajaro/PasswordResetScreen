@@ -10,9 +10,13 @@ import UIKit
 class PasswordTextField: UIView {
     
     let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
+    let textField = UITextField()
+    let placeholderText: String
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(placeholderText: String) {
+        self.placeholderText = placeholderText
+        
+        super.init(frame: .zero)
         
         style()
         layout()
@@ -34,14 +38,41 @@ extension PasswordTextField {
         backgroundColor = .systemOrange
         
         lockImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.isSecureTextEntry = false // true
+        textField.placeholder = placeholderText
+        textField.delegate = self
+        textField.keyboardType = .asciiCapable
+        textField.attributedPlaceholder = NSAttributedString(
+            string: placeholderText,
+            attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel
+            ]
+        )
     }
     
     private func layout() {
         addSubview(lockImageView)
+        addSubview(textField)
         
+        // lockImageView constraints
         NSLayoutConstraint.activate([
-            lockImageView.topAnchor.constraint(equalTo: topAnchor),
+            lockImageView.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
             lockImageView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
+        
+        // textField constraints
+        NSLayoutConstraint.activate([
+            textField.topAnchor.constraint(equalTo: topAnchor),
+            textField.leadingAnchor.constraint(
+                equalToSystemSpacingAfter: lockImageView.trailingAnchor,
+                multiplier: 1
+            )
+        ])
     }
+}
+
+extension PasswordTextField: UITextFieldDelegate {
+    
 }
