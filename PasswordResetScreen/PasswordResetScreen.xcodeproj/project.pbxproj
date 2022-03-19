@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10287D5D27E6142200A79302 /* PasswordCriteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10287D5C27E6142200A79302 /* PasswordCriteriaView.swift */; };
 		10D2A20227E5BBD60028118F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2A20127E5BBD60028118F /* AppDelegate.swift */; };
 		10D2A20627E5BBD60028118F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2A20527E5BBD60028118F /* ViewController.swift */; };
 		10D2A20B27E5BBD70028118F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D2A20A27E5BBD70028118F /* Assets.xcassets */; };
 		10D2A20E27E5BBD70028118F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10D2A20C27E5BBD70028118F /* LaunchScreen.storyboard */; };
-		10D2A21627E5BBF70028118F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 10D2A21527E5BBF70028118F /* .gitignore */; };
 		10D2A21927E5BF470028118F /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2A21827E5BF470028118F /* PasswordTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10287D5C27E6142200A79302 /* PasswordCriteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteriaView.swift; sourceTree = "<group>"; };
 		10D2A1FE27E5BBD60028118F /* PasswordResetScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordResetScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D2A20127E5BBD60028118F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10D2A20527E5BBD60028118F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10D2A20A27E5BBD70028118F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10D2A20D27E5BBD70028118F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10D2A20F27E5BBD70028118F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		10D2A21527E5BBF70028118F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		10D2A21827E5BF470028118F /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,10 +37,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10287D5B27E613E000A79302 /* PasswordStatusView */ = {
+			isa = PBXGroup;
+			children = (
+				10287D5C27E6142200A79302 /* PasswordCriteriaView.swift */,
+			);
+			path = PasswordStatusView;
+			sourceTree = "<group>";
+		};
 		10D2A1F527E5BBD60028118F = {
 			isa = PBXGroup;
 			children = (
-				10D2A21527E5BBF70028118F /* .gitignore */,
 				10D2A20027E5BBD60028118F /* PasswordResetScreen */,
 				10D2A1FF27E5BBD60028118F /* Products */,
 			);
@@ -60,6 +67,7 @@
 				10D2A20127E5BBD60028118F /* AppDelegate.swift */,
 				10D2A20527E5BBD60028118F /* ViewController.swift */,
 				10D2A21827E5BF470028118F /* PasswordTextField.swift */,
+				10287D5B27E613E000A79302 /* PasswordStatusView */,
 				10D2A21727E5BD0D0028118F /* Files */,
 			);
 			path = PasswordResetScreen;
@@ -133,7 +141,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10D2A21627E5BBF70028118F /* .gitignore in Resources */,
 				10D2A20E27E5BBD70028118F /* LaunchScreen.storyboard in Resources */,
 				10D2A20B27E5BBD70028118F /* Assets.xcassets in Resources */,
 			);
@@ -148,6 +155,7 @@
 			files = (
 				10D2A20627E5BBD60028118F /* ViewController.swift in Sources */,
 				10D2A20227E5BBD60028118F /* AppDelegate.swift in Sources */,
+				10287D5D27E6142200A79302 /* PasswordCriteriaView.swift in Sources */,
 				10D2A21927E5BF470028118F /* PasswordTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

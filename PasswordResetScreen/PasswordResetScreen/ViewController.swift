@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     let stackView = UIStackView()
     let newPasswordTextField = PasswordTextField(placeholderText: "New password")
+    let criteriaView = PasswordCriteriaView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +30,12 @@ extension ViewController {
         stackView.spacing = 20
         
         newPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
+        criteriaView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func layout() {
-        stackView.addArrangedSubview(newPasswordTextField)
+//        stackView.addArrangedSubview(newPasswordTextField)
+        stackView.addArrangedSubview(criteriaView)
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
@@ -44,7 +47,7 @@ extension ViewController {
                 multiplier: 2
             ),
             view.trailingAnchor.constraint(
-                equalToSystemSpacingAfter: newPasswordTextField.trailingAnchor,
+                equalToSystemSpacingAfter: stackView.trailingAnchor,
                 multiplier: 2
             )
         ])
