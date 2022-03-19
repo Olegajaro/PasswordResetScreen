@@ -12,6 +12,7 @@
 		10D2A20B27E5BBD70028118F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D2A20A27E5BBD70028118F /* Assets.xcassets */; };
 		10D2A20E27E5BBD70028118F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10D2A20C27E5BBD70028118F /* LaunchScreen.storyboard */; };
 		10D2A21627E5BBF70028118F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 10D2A21527E5BBF70028118F /* .gitignore */; };
+		10D2A21927E5BF470028118F /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2A21827E5BF470028118F /* PasswordTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		10D2A20D27E5BBD70028118F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10D2A20F27E5BBD70028118F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D2A21527E5BBF70028118F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		10D2A21827E5BF470028118F /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +59,20 @@
 			children = (
 				10D2A20127E5BBD60028118F /* AppDelegate.swift */,
 				10D2A20527E5BBD60028118F /* ViewController.swift */,
+				10D2A21827E5BF470028118F /* PasswordTextField.swift */,
+				10D2A21727E5BD0D0028118F /* Files */,
+			);
+			path = PasswordResetScreen;
+			sourceTree = "<group>";
+		};
+		10D2A21727E5BD0D0028118F /* Files */ = {
+			isa = PBXGroup;
+			children = (
 				10D2A20A27E5BBD70028118F /* Assets.xcassets */,
 				10D2A20C27E5BBD70028118F /* LaunchScreen.storyboard */,
 				10D2A20F27E5BBD70028118F /* Info.plist */,
 			);
-			path = PasswordResetScreen;
+			path = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			files = (
 				10D2A20627E5BBD60028118F /* ViewController.swift in Sources */,
 				10D2A20227E5BBD60028118F /* AppDelegate.swift in Sources */,
+				10D2A21927E5BF470028118F /* PasswordTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +290,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PasswordResetScreen/Info.plist;
+				INFOPLIST_FILE = PasswordResetScreen/Files/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -304,7 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PasswordResetScreen/Info.plist;
+				INFOPLIST_FILE = PasswordResetScreen/Files/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
