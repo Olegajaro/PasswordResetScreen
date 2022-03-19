@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10287D5D27E6142200A79302 /* PasswordCriteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10287D5C27E6142200A79302 /* PasswordCriteriaView.swift */; };
+		10287D5F27E61F1400A79302 /* PasswordStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10287D5E27E61F1400A79302 /* PasswordStatusView.swift */; };
 		10D2A20227E5BBD60028118F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2A20127E5BBD60028118F /* AppDelegate.swift */; };
 		10D2A20627E5BBD60028118F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2A20527E5BBD60028118F /* ViewController.swift */; };
 		10D2A20B27E5BBD70028118F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D2A20A27E5BBD70028118F /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		10287D5C27E6142200A79302 /* PasswordCriteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteriaView.swift; sourceTree = "<group>"; };
+		10287D5E27E61F1400A79302 /* PasswordStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusView.swift; sourceTree = "<group>"; };
 		10D2A1FE27E5BBD60028118F /* PasswordResetScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordResetScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D2A20127E5BBD60028118F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10D2A20527E5BBD60028118F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				10287D5C27E6142200A79302 /* PasswordCriteriaView.swift */,
+				10287D5E27E61F1400A79302 /* PasswordStatusView.swift */,
 			);
 			path = PasswordStatusView;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				10D2A20627E5BBD60028118F /* ViewController.swift in Sources */,
 				10D2A20227E5BBD60028118F /* AppDelegate.swift in Sources */,
 				10287D5D27E6142200A79302 /* PasswordCriteriaView.swift in Sources */,
+				10287D5F27E61F1400A79302 /* PasswordStatusView.swift in Sources */,
 				10D2A21927E5BF470028118F /* PasswordTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
