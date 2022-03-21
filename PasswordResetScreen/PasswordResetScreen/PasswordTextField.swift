@@ -53,6 +53,11 @@ extension PasswordTextField {
             ]
         )
         
+        // extra interaction
+        textField.addTarget(self,
+                            action: #selector(textFieldEditingChanged),
+                            for: .editingChanged)
+        
         eyeButton.translatesAutoresizingMaskIntoConstraints = false
         eyeButton.setImage(UIImage(systemName: "eye.circle"), for: .normal)
         eyeButton.setImage(UIImage(systemName: "eye.slash.circle"), for: .selected)
@@ -69,7 +74,7 @@ extension PasswordTextField {
         errorMessageLabel.text = "Enter your password."
         errorMessageLabel.numberOfLines = 0
         errorMessageLabel.lineBreakMode = .byWordWrapping
-        errorMessageLabel.isHidden = false // true
+        errorMessageLabel.isHidden = true
     }
     
     // MARK: - Layout
@@ -134,15 +139,20 @@ extension PasswordTextField {
     }
 }
 
-// MARK: - UITextFieldDelegate
-extension PasswordTextField: UITextFieldDelegate {
-    
-}
-
 // MARK: - Actions
 extension PasswordTextField {
     @objc private func togglePasswordView() {
         textField.isSecureTextEntry.toggle()
         eyeButton.isSelected.toggle()
     }
+    
+    @objc private func textFieldEditingChanged(_ sender: UITextField) {
+        print("DEBUG: foo - \(sender.text ?? "")")
+    }
 }
+
+// MARK: - UITextFieldDelegate
+extension PasswordTextField: UITextFieldDelegate {
+     
+}
+
