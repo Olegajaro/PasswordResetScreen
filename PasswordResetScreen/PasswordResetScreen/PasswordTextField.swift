@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PasswordTextFieldDelegate: AnyObject {
+    func editingChanged(_ sender: PasswordTextField)
+}
+
 class PasswordTextField: UIView {
     
     let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
@@ -15,6 +19,8 @@ class PasswordTextField: UIView {
     let eyeButton = UIButton(type: .custom)
     let dividerView = UIView()
     let errorMessageLabel = UILabel()
+    
+    weak var delegate: PasswordTextFieldDelegate?
     
     init(placeholderText: String) {
         self.placeholderText = placeholderText
@@ -147,7 +153,7 @@ extension PasswordTextField {
     }
     
     @objc private func textFieldEditingChanged(_ sender: UITextField) {
-        print("DEBUG: foo - \(sender.text ?? "")")
+        delegate?.editingChanged(self)
     }
 }
 
