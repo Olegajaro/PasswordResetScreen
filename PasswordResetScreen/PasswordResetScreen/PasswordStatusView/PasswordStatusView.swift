@@ -39,7 +39,7 @@ class PasswordStatusView: UIView {
 }
 
 extension PasswordStatusView {
-    
+    // MARK: - Style
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .tertiarySystemFill
@@ -61,6 +61,7 @@ extension PasswordStatusView {
         specialCharacterCriteriaView.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    // MARK: - Layout
     func layout() {
         stackView.addArrangedSubview(lengthCriteriaView)
         stackView.addArrangedSubview(criteriaLabel)

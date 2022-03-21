@@ -60,7 +60,7 @@ class PasswordCriteriaView: UIView {
 }
 
 extension PasswordCriteriaView {
-    
+    // MARK: - Style
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -78,6 +78,7 @@ extension PasswordCriteriaView {
         label.textColor = .secondaryLabel
     }
     
+    // MARK: - Layout
     func layout() {
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(label)

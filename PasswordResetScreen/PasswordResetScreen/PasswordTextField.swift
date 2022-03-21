@@ -34,9 +34,8 @@ class PasswordTextField: UIView {
     }
 }
 
-// MARK: - SetupViews
 extension PasswordTextField {
-    
+    // MARK: - Style
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -73,6 +72,7 @@ extension PasswordTextField {
         errorMessageLabel.isHidden = false // true
     }
     
+    // MARK: - Layout
     private func layout() {
         addSubview(lockImageView)
         addSubview(textField)
