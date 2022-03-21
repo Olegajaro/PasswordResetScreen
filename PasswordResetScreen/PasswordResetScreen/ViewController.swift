@@ -73,7 +73,7 @@ extension ViewController {
 extension ViewController: PasswordTextFieldDelegate {
     func editingChanged(_ sender: PasswordTextField) {
         if sender === newPasswordTextField {
-            // TODO: update display statusView
+            statusView.updateDisplay(sender.textField.text ?? "")
         }
     }
 }
