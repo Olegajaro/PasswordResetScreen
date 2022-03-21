@@ -93,5 +93,9 @@ extension ViewController: PasswordTextFieldDelegate {
             statusView.updateDisplay(sender.textField.text ?? "")
         }
     }
+    
+    func editingDidEnd(_ sender: PasswordTextField) {
+        print(sender.textField.text ?? "")
+    }
 }
 
