@@ -35,6 +35,7 @@ extension ViewController {
         setupKeyboardHiding()
     }
     
+    // MARK: - Setup new password
     private func setupNewPassword() {
         let newPasswordValidation: CustomValidation = { text in
             
@@ -65,6 +66,7 @@ extension ViewController {
         newPasswordTextField.delegate = self
     }
     
+    // MARK: - Setup confirm password
     private func setupConfirmPassword() {
         let confirmPasswordValidation: CustomValidation = { text in
             guard let text = text, !text.isEmpty else {
@@ -82,6 +84,7 @@ extension ViewController {
         confirmPasswordTextField.delegate = self
     }
     
+    // MARK: - Setup dismiss keyboard gesture
     private func setupDismissKeyboardGesture() {
         let dismissKeyboardTap = UITapGestureRecognizer(
             target: self,
@@ -94,6 +97,7 @@ extension ViewController {
         view.endEditing(true) // resign first responder
     }
     
+    // MARK: - Setup keyboard hiding
     private func setupKeyboardHiding() {
         NotificationCenter.default.addObserver(
             self,
@@ -141,6 +145,7 @@ extension ViewController {
         view.frame.origin.y = 0
     }
     
+    // MARK: - Style UIElements
     private func style() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -157,8 +162,12 @@ extension ViewController {
         resetButton.translatesAutoresizingMaskIntoConstraints = false
         resetButton.configuration = .filled()
         resetButton.setTitle("Reset password", for: [])
+        resetButton.addTarget(self,
+                              action: #selector(resetPasswordButtonTapped),
+                              for: .primaryActionTriggered)
     }
     
+    // MARK: - Layout UIElements
     private func layout() {
         stackView.addArrangedSubview(newPasswordTextField)
         stackView.addArrangedSubview(statusView)
@@ -183,6 +192,33 @@ extension ViewController {
     }
 }
 
+// MARK: - Actions
+extension ViewController {
+    @objc private func resetPasswordButtonTapped(sender: UIButton) {
+        view.endEditing(true)
+        
+        let isValidNewPassword = newPasswordTextField.validate()
+        let isValidConfirmPassword = confirmPasswordTextField.validate()
+        
+        if isValidNewPassword && isValidConfirmPassword {
+            showAlert(
+                title: "Success",
+                message: "You have successfully changed your password"
+            )
+        }
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(
+            title: title, message: message,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        present(alert, animated: true)
+    }
+}
+
 // MARK: - PasswordTextFieldDelegate
 extension ViewController: PasswordTextFieldDelegate {
     func editingChanged(_ sender: PasswordTextField) {
@@ -201,4 +237,3 @@ extension ViewController: PasswordTextFieldDelegate {
         }
     }
 }
-
