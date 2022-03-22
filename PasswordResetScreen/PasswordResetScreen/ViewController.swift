@@ -32,6 +32,7 @@ extension ViewController {
         setupNewPassword()
         setupConfirmPassword()
         setupDismissKeyboardGesture()
+        setupKeyboardHiding()
     }
     
     private func setupNewPassword() {
@@ -91,6 +92,53 @@ extension ViewController {
     
     @objc private func viewTapped(_ recognizer: UITapGestureRecognizer) {
         view.endEditing(true) // resign first responder
+    }
+    
+    private func setupKeyboardHiding() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    @objc private func keyboardWillShow(sender: NSNotification) {
+        guard
+            let userInfo = sender.userInfo,
+            let keyboardFrame = userInfo[
+                UIResponder.keyboardFrameEndUserInfoKey
+            ] as? NSValue,
+            let currentTextField = UIResponder.currentFirst() as? UITextField
+        else { return }
+
+        // check if the top of the keyboard is above the bottom of the currently focused textbox
+        let keyboardTopY = keyboardFrame.cgRectValue.origin.y
+        
+        let convertedTextFieldFrame = view.convert(
+            currentTextField.frame,
+            from: currentTextField.superview
+        )
+        
+        let textFieldBottomY = convertedTextFieldFrame.origin.y + convertedTextFieldFrame.size.height
+        
+        // if textField bottom is below keyboard bottom - bumb the frame up
+        if textFieldBottomY > keyboardTopY {
+            // adjust view up
+            let textBoxY = convertedTextFieldFrame.origin.y
+            let newFrameY = (textBoxY - keyboardTopY / 2) * -1
+            view.frame.origin.y = newFrameY
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        view.frame.origin.y = 0
     }
     
     private func style() {
