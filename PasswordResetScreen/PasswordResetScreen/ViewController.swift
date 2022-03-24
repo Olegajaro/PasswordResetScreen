@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     )
     let resetButton = UIButton(type: .system)
     
+    var alert: UIAlertController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -194,7 +196,7 @@ extension ViewController {
 
 // MARK: - Actions
 extension ViewController {
-    @objc private func resetPasswordButtonTapped(sender: UIButton) {
+    @objc func resetPasswordButtonTapped(sender: UIButton) {
         view.endEditing(true)
         
         let isValidNewPassword = newPasswordTextField.validate()
@@ -209,10 +211,12 @@ extension ViewController {
     }
     
     private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(
+        alert = UIAlertController(
             title: title, message: message,
             preferredStyle: .alert
         )
+        guard let alert = alert else { return }
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
         present(alert, animated: true)
@@ -235,5 +239,18 @@ extension ViewController: PasswordTextFieldDelegate {
         } else if sender == confirmPasswordTextField {
             _ = confirmPasswordTextField.validate()
         }
+    }
+}
+
+// MARK: - Tests
+extension ViewController {
+    var newPasswordText: String? {
+        get { return newPasswordTextField.text }
+        set { newPasswordTextField.text = newValue }
+    }
+    
+    var confirmPasswordText: String? {
+        get { return confirmPasswordTextField.text }
+        set { confirmPasswordTextField.text = newValue }
     }
 }
